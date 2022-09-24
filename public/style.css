@@ -7,10 +7,12 @@
     --color-3: rgba(34, 76, 47, 0.941);
     --color-red: red;
     --color-name: green;
-    --color-5: purple;
+    --color-5: rgb(0, 128, 30);
     --color-6: green;
     --color-black: black;
 }
+
+
 
 .wrap_msg_notif {
     display: flex;
@@ -52,8 +54,10 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+
 .prof {
     display: flex;
+    padding-left: 0.45rem;
 }
 
 .center {
@@ -81,6 +85,10 @@ body {
         cursor: default;
     }
 
+    div .overlay {
+        transform: translate(.5rem, -2.5rem);
+    }
+
     h2 {
         font-size: 1.2rem;
     }
@@ -101,11 +109,17 @@ body {
         /* border-bottom: 0.08rem solid var(--color-2); */
     }
 
+
     .user_detail {
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+    }
+
+    .unread {
+        left: -0.8rem;
+        position: relative;
     }
 
     .chat_user h2 {
@@ -119,16 +133,18 @@ body {
         flex-direction: column;
     }
 
+    /* .wrap_msg_notif h4 {} */
+
     .user_detail h4 {
         margin: 0.32rem 0.5rem;
         color: aliceblue;
-        text-align: center;
         font-size: 0.7rem;
     }
 
     div section {
         max-width: 15rem;
         overflow: hidden;
+        font-size: 0.8rem;
     }
 
     body .message_form {
@@ -173,10 +189,11 @@ strong {
 }
 
 .unread {
-    margin-left: 0.6rem;
-    font-size: xx-small;
-    background: var(--color-3);
-    color: white;
+    font-size: 0.4rem;
+    margin-left: 2rem;
+    background: greenyellow;
+    color: black;
+    font-weight: bolder;
     padding: 0.2rem 0.4rem;
     border-radius: 0.5rem;
 }
@@ -189,8 +206,6 @@ strong {
         justify-content: center;
         align-items: center;
     }
-
-
 
     .user_status {
         width: 0.3rem;
@@ -221,7 +236,6 @@ strong {
     color: green;
     text-align: center;
     margin-bottom: 0.2rem;
-
 }
 
 .user_container {
@@ -235,6 +249,11 @@ strong {
     cursor: pointer;
     padding: 0.8rem 0.5rem;
     border-radius: 0.4rem;
+    text-overflow: ellipsis;
+}
+
+.user_wrapper:hover {
+    background-color: var(--color-3);
 }
 
 .user_info {
@@ -243,7 +262,6 @@ strong {
     justify-content: space-between;
     align-items: center;
 }
-
 
 
 .user_detail {
@@ -323,14 +341,13 @@ strong {
 .messages {
     height: calc(100vh - 9.5rem);
     overflow-y: auto;
-    padding: 0rem 0.25rem;
+    padding: 0rem 0.1rem;
     background-color: var(--color-message_background);
     color: var(--color-2);
 }
 
 .message_wrapper {
-    margin: 0.22rem 0rem;
-    padding: 0.85rem 0rem;
+    padding: 0.45rem 0.15rem;
     overflow-wrap: break-word;
 }
 
@@ -340,16 +357,15 @@ strong {
 }
 
 .message_wrapper p {
-    padding: 0.2rem 0.2rem;
+    padding: 0.45rem 0.5rem;
     display: inline-block;
     max-width: 50%;
     text-align: left;
-    border-radius: 0.35rem;
 }
 
 .message_wrapper small {
     display: inline-block;
-    margin-top: 1rem;
+    margin-top: .6rem;
     opacity: 0.8;
     font-size: xx-small;
 }
@@ -360,17 +376,18 @@ strong {
 
 .me {
     background-color: green;
+    border-radius: 1rem 0rem 1rem 1rem;
     color: var(--color-2);
 }
 
 
 .friend {
+    border-radius: 0rem 1rem 1rem 1rem;
     background-color: var(--color-hover2);
 }
 
 
 /* Message Form*/
-
 
 
 section div img {
@@ -386,24 +403,34 @@ section div img {
 }
 
 
+
 .image_container:hover img {
     opacity: 0.4;
 }
-
 
 .image_container:hover .overlay {
     opacity: 1;
 }
 
+.trash {
+    position: relative;
+    margin-top: 0.5rem;
+}
+
+.trash {
+    position: relative;
+    left: -20%;
+    top: -0.5rem;
+}
 
 
 .overlay {
     transition: 0.5s ease;
     opacity: 0;
-    transform: translate(-50%, -50%);
-    top: 50%;
+    display: flex;
+    transform: translate(.2rem, -3rem);
+    align-items: center;
     text-align: center;
-    left: 19.5%;
     position: absolute;
 }
 
@@ -486,7 +513,7 @@ section {
     transform: translateY(20vh);
     border: 0.2rem solid var(--color-2);
     padding: 2rem;
-    border-radius: 0.4rem;
+    border-radius: 0.75rem;
     box-shadow: 0rem 0.1rem 0.2rem 0.3rem var(--color-3);
 }
 

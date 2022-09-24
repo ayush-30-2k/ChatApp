@@ -17,7 +17,6 @@ import { User } from '../components/User';
 import { MessageForm } from '../components/MessageForm';
 import { ref, getDownloadURL, uploadBytes } from "firebase/storage";
 import { Message } from '../components/Message';
-import { Profile } from './Profile';
 
 export const Home = () => {
     const [users, setUsers] = useState([]);
@@ -110,8 +109,7 @@ export const Home = () => {
     return <div className="home_container">
         <div className="user_container">
             {users.map((user) => (
-                <User key={user.uid} user={user} selectUser={selectUser} user1={user1} chat={chat} />,
-                <Profile key={user.uid} user3={user} />
+                <User key={user.uid} user={user} selectUser={selectUser} user1={user1} chat={chat} />
             ))}
         </div>
         <div className="message_container">

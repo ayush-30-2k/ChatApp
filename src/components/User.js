@@ -21,7 +21,7 @@ export const User = ({ user, selectUser, user1, chat }) => {
     }
 
     const Style = {
-        fontSize: len(text) > 25 ? "0.5rem" : "normal",
+        fontSize: len(text) > 25 ? "0.66rem" : "default",
     }
     return (
         <>
@@ -30,7 +30,7 @@ export const User = ({ user, selectUser, user1, chat }) => {
                     <div className="user_detail">
                         <img src={user.avatar || Img} alt="avatar" className='avatar' />
                         <div className='wrap_msg_notif'>
-                            <h4 style={Style}>{user.name}</h4>
+                            <h4 style={Style}>{len(user.name) < 15 ? user.name : `${user.name.slice(0, 18)}....`} </h4>
                             {data && (
                                 <>
                                     <p className={`truncate ${data.from === user1 ? 'meChat' : 'youChat'}`}>

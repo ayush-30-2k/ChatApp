@@ -7,7 +7,7 @@ import { getDoc, doc, updateDoc } from "firebase/firestore";
 import { Trash } from '../components/svg/Trash';
 import { useNavigate } from "react-router-dom";
 
-export const Profile = (user3) => {
+export const Profile = () => {
     const [img, setImg] = useState("");
     const [user, setUser] = useState();
 
@@ -61,11 +61,6 @@ export const Profile = (user3) => {
         }
 
     }
-    // setuser4(user.email);
-    // console.log(user4);
-    const Style = {
-
-    }
 
 
     return user ? (
@@ -75,7 +70,7 @@ export const Profile = (user3) => {
                     <div className='image_container'>
                         <img src={user.avatar ? user.avatar : Img} alt='avatar' />
                         <div className='overlay'>
-                            <div>
+                            <div className={`${user.avatar ? 'trash' : ''}`}>
                                 <label className='cam' htmlFor='photo'>
                                     <Camera />
                                 </label>
@@ -91,7 +86,7 @@ export const Profile = (user3) => {
                         </div>
                     </div>
                     <div>
-                        <h1 style={Style}>{user.name}</h1>
+                        <h1>{user.name}</h1>
                         <h4 style={{ color: "grey", marginTop: "0.2rem", marginBottom: "0.5rem" }}>{user.email}</h4>
                         <hr style={{ width: "100%" }} />
                         <h6 style={{ marginTop: "0.5rem" }}>Joined On - {user.createAt.toDate().toDateString()}</h6>
