@@ -18,7 +18,7 @@ const Navbar = () => {
     return (
         <nav>
             <h2>
-                <Link to='/'>FunChat</Link>
+                <Link to='/'>ToonChat</Link>
             </h2>
             <div className='center'>
                 {user ? (<>
