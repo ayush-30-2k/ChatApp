@@ -199,7 +199,7 @@ strong {
 }
 
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
     .col {
         display: flex;
         flex-direction: column;
@@ -213,7 +213,7 @@ strong {
         border-radius: 100%;
         margin-top: 0.5rem;
     }
-}
+} */
 
 .home_container {
     position: relative;
