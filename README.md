@@ -4,6 +4,6 @@ This is a React Chat Applicaton on web, which allows you to Chat with someone by
 
 : Send the Link: - When they Register themself successfully.
 
-: Enjoy Chat And Increase More Users.
+: Enjoy Chat And Share to increase More Users.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
