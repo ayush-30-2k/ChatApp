@@ -12,8 +12,9 @@ export const Message = ({ msg, user1 }) => {
         <>
             <div className={`message_wrapper ${msg.from === user1 ? 'own' : ""}`} ref={scrollRef}>
                 <p className={msg.from === user1 ? 'me' : "friend "}>
-                    {msg.media ? <img src={msg.media} alt={msg.text} /> : null}
-                    {msg.text}
+                    {msg.text ? msg.text : (
+                        msg.media ? <img src={msg.media} alt={msg.text} /> : null)
+                    }
                     <br />
                     <small>
                         <Moment fromNow>{msg.createAt.toDate()}</Moment>
